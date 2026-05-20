@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beautify By Klára | Kosmetický salon Havířov</title>
+<meta name="description" content="Luxusní kosmetický salon Beautify By Klára v Havířově. Ošetření pleti, lash lifting, laminace obočí, depilace, dárkové poukazy a kosmetika Essenté." />
+<meta property="og:title" content="Beautify By Klára | Kosmetický salon Havířov" />
+<meta property="og:description" content="Luxusní péče o pleť, řasy, obočí a tělo. Mickiewiczova 548/1a, Havířov." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beautifybyklara.cz/" />
+<meta property="og:image" content="https://beautifybyklara.cz/images/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Beautify By Klára | Kosmetický salon Havířov" />
+<meta name="twitter:description" content="Luxusní péče o pleť, řasy, obočí a tělo. Mickiewiczova 548/1a, Havířov." />
+<meta name="twitter:image" content="https://beautifybyklara.cz/images/og-image.jpg" />
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+<meta name="theme-color" content="#0a0608" />
+<meta name="color-scheme" content="dark only" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --bg: #0a0608;
+  --bg-soft: #14090f;
+  --ink: #f5e6ee;
+  --ink-dim: #c9a8b9;
+  --pink: #ffb8db;
+  --pink-soft: #ffd0e4;
+  --pink-glow: #ff7ec0;
+  --pink-hot: #ff5fb0;
+  --line: rgba(255, 184, 219, 0.15);
+  --shadow-neon: 0 0 12px rgba(255, 184, 219, 0.55), 0 0 32px rgba(255, 95, 176, 0.35), 0 0 64px rgba(255, 95, 176, 0.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Silk background texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(255, 184, 219, 0.08), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 95, 176, 0.06), transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(40, 15, 30, 0.4), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.04 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+main, header, footer { position: relative; z-index: 2; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+/* ========== TYPOGRAPHY ========== */
+.script {
+  font-family: 'Pinyon Script', cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.script-thin {
+  font-family: 'Pinyon Script', cursive;
+  font-weight: 400;
+}
+
+.neon {
+  color: var(--pink-soft);
+}
+
+.eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+  margin-bottom: 18px;
+}
+
+/* ========== NAVIGATION ========== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 8px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a0608;
+  border-bottom: 1px solid var(--line);
+  transition: padding 0.3s ease;
+  height: 60px;
+}
+
+.nav.scrolled { padding: 6px 40px; height: 52px; }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  transition: opacity 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.nav.scrolled .nav-logo { height: 48px; }
+
+.nav-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+  transition: opacity 0.3s;
+}
+
+.nav-logo:hover img {
+  opacity: 0.85;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--pink-soft); }
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--pink);
+  transition: all 0.3s;
+  box-shadow: 0 0 8px var(--pink-glow);
+}
+
+.nav-links a:hover::after { width: 100%; left: 0; }
+
+.nav-cta {
+  border: 1px solid var(--pink);
+  padding: 10px 22px !important;
+  border-radius: 50px;
+  color: var(--pink-soft) !important;
+  box-shadow: 0 0 12px rgba(255, 95, 176, 0.3), inset 0 0 12px rgba(255, 95, 176, 0.1);
+  transition: all 0.3s !important;
+}
+
+.nav-cta:hover {
+  background: var(--pink);
+  color: #0a0608 !important;
+  box-shadow: 0 0 24px var(--pink-glow);
+}
+
+.nav-cta::after { display: none; }
+
+.nav-socials {
+  display: flex !important;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-social {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--pink);
+  color: var(--pink-soft) !important;
+  transition: all 0.3s !important;
+  padding: 0 !important;
+}
+
+.nav-social svg {
+  width: 15px;
+  height: 15px;
+}
+
+.nav-social:hover {
+  background: var(--pink);
+  color: #0a0608 !important;
+}
+
+.nav-social::after { display: none !important; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--pink-soft);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle svg { width: 28px; height: 28px; }
+
+.nav-close { display: none; }
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 20px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255, 184, 219, 0.12), transparent 70%),
+    linear-gradient(180deg, transparent 0%, var(--bg) 100%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeUp 1.2s 0.2s ease forwards;
+}
+
+.hero h1 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 400;
+  line-height: 0.95;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeUp 1.4s 0.5s ease forwards;
+}
+
+.hero h1 .line-1 { display: block; }
+.hero h1 .line-2 {
+  display: block;
+  margin-top: -10px;
+  margin-left: -80px;
+  font-family: 'Pinyon Script', cursive;
+  font-size: 0.7em;
+}
+
+.hero-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(18px, 2.2vw, 24px);
+  color: var(--ink-dim);
+  max-width: 540px;
+  margin: 30px auto 50px;
+  opacity: 0;
+  animation: fadeUp 1.2s 0.9s ease forwards;
+}
+
+.hero-tagline::before, .hero-tagline::after {
+  content: '✦';
+  color: var(--pink);
+  margin: 0 18px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 1.2s 1.2s ease forwards;
+}
+
+.hero-buttons-no-tagline {
+  margin-top: 60px;
+}
+
+.hero-social-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 28px;
+  opacity: 0;
+  animation: fadeUp 1.2s 1.5s ease forwards;
+}
+
+.hero-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 50px;
+  border: 1px solid var(--pink);
+  color: var(--pink-soft);
+  background: rgba(255, 184, 219, 0.04);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+
+.hero-social-btn:hover {
+  background: var(--pink);
+  color: #0a0608;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 95, 176, 0.3);
+}
+
+.hero-social-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 18px 38px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--pink);
+  color: #0a0608;
+  box-shadow: 0 0 20px rgba(255, 95, 176, 0.5), 0 8px 32px rgba(255, 95, 176, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--pink-soft);
+  box-shadow: 0 0 32px var(--pink-glow), 0 12px 40px rgba(255, 95, 176, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  border-color: var(--pink);
+  color: var(--pink-soft);
+  background: rgba(255, 184, 219, 0.05);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 184, 219, 0.15);
+  box-shadow: 0 0 20px rgba(255, 95, 176, 0.3);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  opacity: 0;
+  animation: fadeUp 1s 1.8s ease forwards, bobble 2s 2.8s ease-in-out infinite;
+}
+
+.hero-scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--pink), transparent);
+  margin: 12px auto 0;
+}
+
+/* Decorative sparkles */
+.sparkle {
+  position: absolute;
+  color: var(--pink);
+  pointer-events: none;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.sparkle-1 { top: 25%; left: 12%; font-size: 24px; animation-delay: 0s; }
+.sparkle-2 { top: 35%; right: 15%; font-size: 18px; animation-delay: 0.8s; }
+.sparkle-3 { bottom: 30%; left: 18%; font-size: 14px; animation-delay: 1.6s; }
+.sparkle-4 { top: 60%; right: 22%; font-size: 20px; animation-delay: 2.2s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 10px var(--pink-glow); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bobble {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ========== SECTIONS ========== */
+section { padding: 120px 40px; position: relative; }
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(64px, 9vw, 120px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink-dim);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ========== ABOUT ========== */
+.about {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image-wrap {
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: 200px 200px 8px 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.05) saturate(0.95);
+}
+
+.about-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--bg-soft);
+  border: 1px solid var(--pink);
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-neon);
+  z-index: 2;
+}
+
+.about-badge-num {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 48px;
+  color: var(--pink-soft);
+  line-height: 1;
+}
+
+.about-badge small {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-top: 4px;
+  display: block;
+  max-width: 80px;
+}
+
+.about-content h2 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(56px, 7vw, 88px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.about-content p {
+  font-size: 15px;
+  color: var(--ink-dim);
+  margin-bottom: 18px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.about-content p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.about-list {
+  list-style: none;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.about-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: var(--ink-dim);
+  letter-spacing: 0.05em;
+}
+
+.about-list li::before {
+  content: '✦';
+  color: var(--pink);
+  font-size: 12px;
+  text-shadow: 0 0 8px var(--pink-glow);
+}
+
+/* ========== TREATMENTS ========== */
+.treatments {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 95, 176, 0.04), transparent 60%),
+    var(--bg);
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.treatment-card {
+  background: linear-gradient(180deg, rgba(20, 9, 15, 0.8), rgba(10, 6, 8, 0.9));
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.treatment-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pink), transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.treatment-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 184, 219, 0.5);
+  box-shadow: 0 20px 60px rgba(255, 95, 176, 0.15), 0 0 0 1px rgba(255, 184, 219, 0.2);
+}
+
+.treatment-card:hover::before { opacity: 1; }
+
+.treatment-name {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--pink-soft);
+  margin-bottom: 4px;
+  line-height: 1.15;
+}
+
+.treatment-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 24px;
+}
+
+.treatment-desc {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin-bottom: 28px;
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 110px;
+}
+
+.treatment-includes {
+  list-style: none;
+  margin-bottom: 28px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line);
+}
+
+.treatment-includes li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: var(--ink-dim);
+  padding: 6px 0 6px 18px;
+  position: relative;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.treatment-includes li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--pink);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.treatment-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.treatment-time {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.treatment-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.treatment-price span {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-dim);
+  margin-left: 2px;
+}
+
+/* ========== PRICING TABLES ========== */
+.pricing {
+  background:
+    radial-gradient(ellipse at 80% 50%, rgba(255, 95, 176, 0.05), transparent 60%),
+    var(--bg);
+}
+
+.price-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.price-table {
+  background: linear-gradient(180deg, rgba(20, 9, 15, 0.6), rgba(10, 6, 8, 0.4));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 50px 40px;
+  backdrop-filter: blur(10px);
+}
+
+.price-table h3 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 64px;
+  font-weight: 400;
+  color: var(--pink-soft);
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.price-list {
+  list-style: none;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px dashed var(--line);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.price-list li:last-child { border-bottom: none; }
+
+.price-list .item {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink);
+  flex: 1;
+  letter-spacing: 0.02em;
+}
+
+.price-list .item small {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--ink-dim);
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.price-list .dots {
+  flex: 1;
+  margin: 0 12px;
+  border-bottom: 1px dotted rgba(255, 184, 219, 0.25);
+  position: relative;
+  bottom: 4px;
+}
+
+.price-list .price {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--pink-soft);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* ========== EXTRAS - poukazy feature ========== */
+.extras {
+  background:
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+}
+
+.vouchers-feature {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 50px;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.vouchers-feature::before {
+  display: none;
+}
+
+.vouchers-image {
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.vouchers-text {
+  position: relative;
+  z-index: 1;
+}
+
+.vouchers-text .badge {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+  padding: 6px 14px;
+  border: 1px solid var(--pink);
+  border-radius: 50px;
+  margin-bottom: 28px;
+}
+
+.vouchers-text p {
+  font-size: 16px;
+  color: var(--ink-dim);
+  margin-bottom: 32px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+/* ========== GALLERY ========== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #0a0608;
+  aspect-ratio: 3/4;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-item:hover img { transform: scale(1.08); }
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(10, 6, 8, 0.6));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.gallery-item:hover::after { opacity: 1; }
+
+/* ========== REVIEWS ========== */
+.reviews {
+  background: var(--bg-soft);
+  position: relative;
+}
+
+.reviews::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 95, 176, 0.06), transparent 70%);
+  pointer-events: none;
+}
+
+.reviews-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.reviews-stars {
+  display: flex;
+  gap: 4px;
+  color: var(--pink-soft);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.reviews-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.reviews-meta strong { color: var(--pink-soft); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.review-card {
+  background: rgba(20, 9, 15, 0.5);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 40px 32px;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.review-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  font-family: 'Pinyon Script', cursive;
+  font-size: 120px;
+  color: var(--pink);
+  line-height: 1;
+}
+
+.review-stars {
+  color: var(--pink-soft);
+  font-size: 14px;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+}
+
+.review-text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 24px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.review-author {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+}
+
+.reviews-cta {
+  text-align: center;
+}
+
+/* ========== CONSULTATION ========== */
+.consultation {
+  padding: 100px 40px;
+  text-align: center;
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(255, 95, 176, 0.08), transparent 60%),
+    var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.consultation-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.consultation-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+  margin-bottom: 24px;
+}
+
+.consultation h2 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(68px, 10vw, 120px);
+  font-weight: 400;
+  line-height: 0.95;
+  margin-bottom: 24px;
+}
+
+.consultation p {
+  font-size: 15px;
+  color: var(--ink-dim);
+  margin-bottom: 40px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.consultation::before, .consultation::after {
+  content: '✦';
+  position: absolute;
+  font-size: 28px;
+  color: var(--pink);
+  text-shadow: 0 0 12px var(--pink-glow);
+}
+
+.consultation::before { top: 60px; left: 15%; }
+.consultation::after { bottom: 60px; right: 15%; }
+
+/* ========== CONTACT ========== */
+.contact {
+  padding: 120px 40px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info h2 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(60px, 8vw, 96px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.contact-item {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.contact-item:last-child { border-bottom: none; }
+
+.contact-item .label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+  margin-bottom: 10px;
+}
+
+.contact-item .value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 0.02em;
+}
+
+.contact-item .value a {
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.contact-item .value a:hover {
+  color: var(--pink-soft);
+  border-bottom-color: var(--pink);
+}
+
+.hours-list {
+  list-style: none;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 6px 0;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.hours-list li.closed { color: var(--ink-dim); font-style: italic; }
+
+.hours-list li span:last-child { color: var(--pink-soft); }
+
+.social-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.social-row a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pink-soft);
+  transition: all 0.3s;
+}
+
+.social-row a:hover {
+  background: var(--pink);
+  color: #0a0608;
+  box-shadow: 0 0 20px var(--pink-glow);
+  transform: translateY(-2px);
+}
+
+.social-row svg { width: 18px; height: 18px; }
+
+.contact-map {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--pink);
+  box-shadow: 0 0 30px rgba(255, 95, 176, 0.15);
+  min-height: 500px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.contact-map:hover {
+  box-shadow: 0 0 50px rgba(255, 95, 176, 0.35);
+  transform: translateY(-2px);
+}
+
+.map-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  background:
+    radial-gradient(ellipse at 50% 50%, #1a0a14 0%, #0a0608 70%),
+    var(--bg-soft);
+  overflow: hidden;
+}
+
+.map-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes mapPulse {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.map-pulse {
+  transform-origin: center;
+  animation: mapPulse 2.4s ease-out infinite;
+}
+
+.map-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.map-label {
+  background: rgba(10, 6, 8, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--pink);
+  border-radius: 8px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  transition: all 0.3s;
+}
+
+.contact-map:hover .map-label {
+  background: rgba(20, 9, 15, 0.95);
+}
+
+.map-label-name {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 42px;
+  color: var(--pink-soft);
+  line-height: 1;
+}
+
+.map-label-addr {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.map-label-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+
+.parking-note {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(20, 9, 15, 0.6);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.parking-note h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+  margin-bottom: 10px;
+}
+
+.parking-note p {
+  font-size: 15px;
+  color: var(--ink-dim);
+  line-height: 1.5;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: 30px 40px 20px;
+  border-top: 1px solid var(--line);
+  background: #0a0608;
+  text-align: center;
+}
+
+/* Modal rezervace */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.modal-overlay.open { display: flex; }
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: #0a0608;
+  border: 1px solid rgba(255, 184, 219, 0.3);
+  border-radius: 12px;
+  padding: 50px 40px 40px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 60px rgba(255, 95, 176, 0.15);
+  animation: modalSlideUp 0.4s ease;
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  color: var(--ink-dim);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.modal-close:hover {
+  border-color: var(--pink);
+  color: var(--pink-soft);
+}
+
+.modal-close svg { width: 16px; height: 16px; }
+
+.modal-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink-soft);
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.modal-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--ink-dim);
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.modal-phone {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--pink-soft);
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+
+.modal-phone:hover { color: var(--pink); }
+
+.modal-hours {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: var(--ink-dim);
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-small {
+  padding: 10px 18px !important;
+  font-size: 11px !important;
+}
+
+.modal-copied {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: var(--pink-soft);
+  margin-top: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.modal-copied.show { opacity: 1; }
+
+@media (max-width: 600px) {
+  .modal-content { padding: 40px 24px 30px; }
+  .modal-title { font-size: 40px; }
+  .modal-phone { font-size: 24px; }
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.footer-logo img {
+  height: 70px;
+  width: auto;
+}
+
+.footer-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 20px;
+}
+
+.footer-bottom {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: var(--ink-dim);
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== REVEAL ON SCROLL ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 968px) {
+  .nav { padding: 8px 20px; }
+  .nav.scrolled { padding: 6px 20px; }
+  .menu-toggle { display: block; }
+  .nav-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 80%;
+    max-width: 360px;
+    height: 100vh;
+    background: #0a0608;
+    flex-direction: column;
+    padding: 100px 40px;
+    gap: 28px;
+    transition: right 0.4s ease;
+    border-left: 1px solid var(--line);
+  }
+  .nav-links.open { right: 0; }
+  .nav-close {
+    display: block !important;
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    background: none;
+    border: 1px solid var(--pink);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: var(--pink-soft);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s;
+  }
+  .nav-close:hover {
+    background: var(--pink);
+    color: #0a0608;
+  }
+  .nav-close svg { width: 18px; height: 18px; }
+  .hero h1 .line-2 { margin-left: -40px; }
+  section { padding: 80px 20px; }
+  .about { grid-template-columns: 1fr; gap: 60px; }
+  .about-list { grid-template-columns: 1fr; }
+  .price-tables { grid-template-columns: 1fr; gap: 30px; }
+  .vouchers-feature { grid-template-columns: 1fr; padding: 24px; gap: 30px; }
+  .vouchers-image { height: 320px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-map { min-height: 400px; }
+  .footer-bottom { flex-direction: column; }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 80px 16px 140px;
+  }
+  .hero-buttons-no-tagline { margin-top: 30px; }
+  .hero-social-buttons { margin-top: 16px; }
+  .btn { padding: 14px 24px; font-size: 11px; }
+  .hero-buttons { gap: 12px; }
+  .treatment-card, .extra-card, .price-table, .review-card { padding: 32px 24px; }
+  .extra-card-with-image .text-half { padding: 24px; }
+  .extra-card h3 { font-size: 56px; }
+  .price-table h3 { font-size: 50px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<header class="nav" id="nav">
+  <a href="#" class="nav-logo" aria-label="Beautify by Klára - domov">
+    <img src="images/logo.png" alt="Beautify by Klára" />
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <button class="nav-close" id="navClose" aria-label="Zavřít menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M6 6l12 12M6 18L18 6"/>
+      </svg>
+    </button>
+    <li><a href="#about">O mně</a></li>
+    <li><a href="#treatments">Ošetření a ceník</a></li>
+    <li><a href="#gallery">Galerie</a></li>
+    <li><a href="#reviews">Recenze</a></li>
+    <li><a href="#contact">Kde mě najdete</a></li>
+    <li class="nav-socials">
+      <a href="https://www.instagram.com/beautifybyklara/" target="_blank" rel="noopener" aria-label="Instagram" class="nav-social">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/p/Beautify-By-Klára-61555807177376/" target="_blank" rel="noopener" aria-label="Facebook" class="nav-social">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5H16V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V11H7v3.1h2.6V22H13z"/>
+        </svg>
+      </a>
+    </li>
+    <li><a href="tel:+420730553590" class="nav-cta">Rezervace</a></li>
+  </ul>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M3 6h18M3 12h18M3 18h18"/>
+    </svg>
+  </button>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <span class="sparkle sparkle-1">✦</span>
+  <span class="sparkle sparkle-2">✧</span>
+  <span class="sparkle sparkle-3">✦</span>
+  <span class="sparkle sparkle-4">✧</span>
+
+  <p class="hero-eyebrow">Kosmetický salon · Havířov</p>
+  <h1 class="neon">
+    <span class="line-1">Beautify</span>
+    <span class="line-2">by Klára</span>
+  </h1>
+  <div class="hero-buttons hero-buttons-no-tagline">
+    <a href="tel:+420730553590" class="btn btn-primary">Rezervovat termín</a>
+    <a href="#treatments" class="btn btn-ghost">Prozkoumat ošetření</a>
+  </div>
+  <div class="hero-social-buttons">
+    <a href="https://www.instagram.com/beautifybyklara/" target="_blank" rel="noopener" class="hero-social-btn" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+      </svg>
+      <span>Instagram</span>
+    </a>
+    <a href="https://www.facebook.com/p/Beautify-By-Klára-61555807177376/" target="_blank" rel="noopener" class="hero-social-btn" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5H16V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V11H7v3.1h2.6V22H13z"/>
+      </svg>
+      <span>Facebook</span>
+    </a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="container">
+  <div class="about reveal">
+    <div class="about-image-wrap">
+      <div class="about-image">
+        <img src="images/klara.jpg" alt="Klára, majitelka salonu Beautify By Klára" />
+      </div>
+    </div>
+    <div class="about-content">
+      <p class="eyebrow">O mně</p>
+      <h2 class="neon">Vítejte v mém světě</h2>
+      <p>
+        Kosmetice a beauty službám se věnuji s láskou a důrazem na individuální přístup.
+      </p>
+      <p>
+        Věřím, že péče o sebe není luxus, ale způsob, jak se cítit dobře ve vlastním těle.
+        Ve svém salonu se zaměřuji na individuální přístup, detail a příjemnou atmosféru,
+        ve které si každá klientka může odpočinout a dopřát si chvíli pro sebe.
+      </p>
+      <p>
+        Mojí prioritou je, aby se od nás cítila krásně, sebevědomě a spokojeně 🤍
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TREATMENTS ========== -->
+<section id="treatments" class="treatments">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title neon">Kosmetické procedury</h2>
+    </div>
+
+    <div class="treatment-grid">
+
+      <article class="treatment-card reveal">
+        <h3 class="treatment-name">Hydra Plus</h3>
+        <p class="treatment-tagline">Hloubková hydratace</p>
+        <p class="treatment-desc">
+          Intenzivní hydratační ošetření AHA kyselinami pro všechny typy pleti, i ty nejcitlivější. Obnovuje hydrataci, regeneruje kožní bariéru, zlepšuje pružnost.
+        </p>
+        <ul class="treatment-includes">
+          <li>povrchové čistění pleti</li>
+          <li>masáž obličeje, krku a dekoltu</li>
+          <li>hloubkové čistění ultrazvukovou špachtlí</li>
+          <li>peeling s AHA + výživná maska</li>
+          <li>maska na rty, světelná terapie, krém</li>
+        </ul>
+        <div class="treatment-footer">
+          <span class="treatment-time">cca 90 min</span>
+          <span class="treatment-price">1050<span> Kč</span></span>
+        </div>
+      </article>
+
+      <article class="treatment-card reveal">
+        <h3 class="treatment-name">Lift Express</h3>
+        <p class="treatment-tagline">Okamžitý lifting</p>
+        <p class="treatment-desc">
+          Intenzivní anti-aging ošetření pro ochablou, unavenou pokožku. Okamžitý účinek omlazení, vypnutí a zpevnění. Redukuje vrásky a navrací konturu obličeje.
+        </p>
+        <ul class="treatment-includes">
+          <li>povrchové čistění + ultrazvuk</li>
+          <li>masáž obličeje, krku a dekoltu</li>
+          <li>mikromasáž očního okolí</li>
+          <li>peeling AHA + liftingová maska</li>
+          <li>maska na oči a rty, světelná terapie</li>
+        </ul>
+        <div class="treatment-footer">
+          <span class="treatment-time">cca 100 min</span>
+          <span class="treatment-price">1500<span> Kč</span></span>
+        </div>
+      </article>
+
+      <article class="treatment-card reveal">
+        <h3 class="treatment-name">Acne Stop Express</h3>
+        <p class="treatment-tagline">Pro problematickou pleť</p>
+        <p class="treatment-desc">
+          Intenzivní ošetření AHA kyselinami, vhodné i pro citlivou pleť s projevy akné. Napomáhá rychlému odeznění příznaků, odstraňuje černé tečky, zmírňuje záněty.
+        </p>
+        <ul class="treatment-includes">
+          <li>povrchové čistění + nápařka</li>
+          <li>hloubkové ruční + ultrazvukové čistění</li>
+          <li>peeling s AHA kyselinami</li>
+          <li>detoxikační maska + maska na rty</li>
+          <li>světelná terapie, boostery a krém</li>
+        </ul>
+        <div class="treatment-footer">
+          <span class="treatment-time">cca 90 min</span>
+          <span class="treatment-price">1150<span> Kč</span></span>
+        </div>
+      </article>
+
+      <article class="treatment-card reveal">
+        <h3 class="treatment-name">Bukální Liftingová Masáž</h3>
+        <p class="treatment-tagline">Exkluzivní anti-aging</p>
+        <p class="treatment-desc">
+          Technika spojující vnější a vnitřní masáž obličejových svalů. Intenzivní lifting obličeje, uvolnění svalového napětí, redukce mimických vrásek.
+        </p>
+        <ul class="treatment-includes">
+          <li>povrchové čistění pleti</li>
+          <li>masáž obličeje, krku a dekoltu</li>
+          <li>bukální masáž zevnitř i zvenku</li>
+          <li>peeling s AHA + alginátová maska</li>
+          <li>světelná terapie, boostery, krém</li>
+        </ul>
+        <div class="treatment-footer">
+          <span class="treatment-time">cca 100 min</span>
+          <span class="treatment-price">1800<span> Kč</span></span>
+        </div>
+      </article>
+
+      <article class="treatment-card reveal">
+        <h3 class="treatment-name">Redness Minimizers</h3>
+        <p class="treatment-tagline">Pro citlivou pleť</p>
+        <p class="treatment-desc">
+          Zklidňující ošetření citlivé až hypersenzitivní pleti, vhodné i pro pleť s projevy kuperózy. Zmírňuje podráždění, zlepšuje mikrocirkulaci.
+        </p>
+        <ul class="treatment-includes">
+          <li>povrchové čistění pleti</li>
+          <li>masáž obličeje, krku a dekoltu</li>
+          <li>enzymatický peeling</li>
+          <li>zklidňující maska + maska na rty</li>
+          <li>světelná terapie, boostery, krém</li>
+        </ul>
+        <div class="treatment-footer">
+          <span class="treatment-time">cca 90 min</span>
+          <span class="treatment-price">1100<span> Kč</span></span>
+        </div>
+      </article>
+
+      <article class="treatment-card reveal">
+        <h3 class="treatment-name">Peel-therapy Concept</h3>
+        <p class="treatment-tagline">Korneoterapie</p>
+        <p class="treatment-desc">
+          Korneoterapeutické ošetření, které odstraňuje první známky stárnutí pleti. Vyhlazuje vrásky, obnovuje vypnutí pleti, zjemňuje strukturu. 4–6 ošetření v intervalech 1–2 týdnů.
+        </p>
+        <ul class="treatment-includes">
+          <li>povrchové čistění pleti</li>
+          <li>pre-peeling a korneo-peeling</li>
+          <li>oční korneo-peeling</li>
+          <li>speciální péče v podobě boosterů a krému</li>
+        </ul>
+        <div class="treatment-footer">
+          <span class="treatment-time">cca 60 min</span>
+          <span class="treatment-price">1200<span> Kč</span></span>
+        </div>
+      </article>
+
+      <article class="treatment-card reveal">
+        <h3 class="treatment-name">Spots Whitening</h3>
+        <p class="treatment-tagline">Depigmentační koncept</p>
+        <p class="treatment-desc">
+          Ošetření, které zesvětluje stávající pigmentové skvrny, sjednocuje a projasňuje barvu pleti. Pro výsledný efekt doporučujeme 4–6 ošetření v intervalech 1 až 2 týdnů.
+        </p>
+        <ul class="treatment-includes">
+          <li>povrchové čistění pleti</li>
+          <li>pre-peeling a korneo-peeling</li>
+          <li>alginátová maska na obličej, krk a dekolt</li>
+          <li>světelná terapie</li>
+          <li>speciální depigmentační péče: boostery, krém, SPF</li>
+        </ul>
+        <div class="treatment-footer">
+          <span class="treatment-time">cca 90 min</span>
+          <span class="treatment-price">1600<span> Kč</span></span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== -->
+<section id="pricing" class="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title neon">Další služby</h2>
+    </div>
+
+    <div class="price-tables">
+
+      <div class="price-table reveal">
+        <h3>Obočí &amp; Řasy</h3>
+        <ul class="price-list">
+          <li>
+            <span class="item">
+              Lash Lifting
+              <small>včetně barvení řas a aplikace výživy</small>
+            </span>
+            <span class="dots"></span>
+            <span class="price">950 Kč</span>
+          </li>
+          <li>
+            <span class="item">
+              Laminace obočí
+              <small>včetně barvení, úpravy a aplikace výživy</small>
+            </span>
+            <span class="dots"></span>
+            <span class="price">850 Kč</span>
+          </li>
+          <li>
+            <span class="item">
+              Lash &amp; Lami Combo
+              <small>kompletní péče o řasy i obočí</small>
+            </span>
+            <span class="dots"></span>
+            <span class="price">1 500 Kč</span>
+          </li>
+          <li>
+            <span class="item">Barvení a úprava obočí</span>
+            <span class="dots"></span>
+            <span class="price">300 Kč</span>
+          </li>
+          <li>
+            <span class="item">Úprava obočí</span>
+            <span class="dots"></span>
+            <span class="price">100 Kč</span>
+          </li>
+          <li>
+            <span class="item">Barvení řas</span>
+            <span class="dots"></span>
+            <span class="price">150 Kč</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="price-table reveal">
+        <h3>Depilace</h3>
+        <ul class="price-list">
+          <li><span class="item">Horní ret</span><span class="dots"></span><span class="price">100 Kč</span></li>
+          <li><span class="item">Brada</span><span class="dots"></span><span class="price">100 Kč</span></li>
+          <li><span class="item">Dermaplaning</span><span class="dots"></span><span class="price">250 Kč</span></li>
+          <li><span class="item">Podpaží</span><span class="dots"></span><span class="price">400 Kč</span></li>
+          <li><span class="item">Předloktí</span><span class="dots"></span><span class="price">450 Kč</span></li>
+          <li><span class="item">Celé ruce</span><span class="dots"></span><span class="price">600 Kč</span></li>
+          <li><span class="item">Lýtka</span><span class="dots"></span><span class="price">450 Kč</span></li>
+          <li><span class="item">Stehna</span><span class="dots"></span><span class="price">500 Kč</span></li>
+          <li><span class="item">Celé nohy</span><span class="dots"></span><span class="price">800 Kč</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXTRAS - jen poukazy ========== -->
+<section class="extras">
+  <div class="container">
+    <div class="vouchers-feature reveal">
+      <div class="vouchers-image" style="background-image: url('images/vouchers.jpg');"></div>
+      <div class="vouchers-text">
+        <span class="badge">Dárkový poukaz</span>
+        <p>
+          Dárkový poukaz Beautify By Klára na libovolnou kosmetickou službu
+          nebo nákup produktů Essenté. Připravený v elegantním provedení
+          s růžovou obálkou.
+        </p>
+        <p style="font-size: 13px; color: var(--ink-dim); margin-top: -16px; margin-bottom: 32px; font-style: italic; line-height: 1.6;">
+          Platnost poukazu není časově omezená, nemusíte se bát, že byste jej nestihli uplatnit.
+        </p>
+        <a href="#contact" class="btn btn-primary">Mám zájem o poukaz</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title neon">Galerie</h2>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="images/salon-interior.jpg" alt="Interiér salonu Beautify By Klára" />
+      </div>
+      <div class="gallery-item">
+        <img src="images/salon-sofa.jpg" alt="Odpočinková zóna salonu" />
+      </div>
+      <div class="gallery-item">
+        <img src="images/essente.jpg" alt="Profesionální kosmetika Essenté v salonu" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REVIEWS ========== -->
+<section id="reviews" class="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <div class="reviews-stars">★ ★ ★ ★ ★</div>
+      <h2 class="section-title neon">Recenze klientek</h2>
+      <p class="reviews-meta"><strong>5,0</strong> · Hodnocení na Google</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★ ★ ★ ★ ★</div>
+        <p class="review-text">
+          Naprosto dokonalý zážitek. Čas plyne, jako by neexistoval. Doporučuji
+          každé ženě a dívce navštívit Klárku, určitě nebudete litovat a
+          vždycky se budete těšit na další setkání!
+        </p>
+        <p class="review-author">Klientka salonu</p>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★ ★ ★ ★ ★</div>
+        <p class="review-text">
+          Naprostá spokojenost, nadstandardní péče, pečlivý a přátelský přístup.
+          Přestože jsem tam strávila celé odpoledne, čas utekl strašně rychle.
+          Cítila jsem se jako u kamarádky. Doporučuji všemi deseti!
+        </p>
+        <p class="review-author">Klientka salonu</p>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★ ★ ★ ★ ★</div>
+        <p class="review-text">
+          V salonu jsem byla velmi spokojená. Perfektní přístup. Při aplikaci
+          barvy na obočí mi paní udělala i masáž hlavy. To jen tak někde
+          nezažijete. Mohu jen doporučit.
+        </p>
+        <p class="review-author">Klientka salonu</p>
+      </div>
+    </div>
+
+    <div class="reviews-cta reveal">
+      <a href="https://search.google.com/local/reviews?placeid=ChIJjcMKZoiMSUoR2M8JRy1WW5c" target="_blank" rel="noopener" class="btn btn-ghost">Všechny recenze na Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="contact">
+  <div class="contact-grid">
+
+    <div class="contact-info reveal">
+      <h2 class="neon">Kde mě najdete</h2>
+
+      <div class="contact-item">
+        <p class="label">Adresa</p>
+        <p class="value">
+          <a href="https://www.google.com/maps/search/?api=1&query=Beautify+By+Kl%C3%A1ra&query_place_id=ChIJjcMKZoiMSUoR2M8JRy1WW5c" target="_blank" rel="noopener">
+            Mickiewiczova 548/1a<br />736 01 Havířov-Město
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <p class="label">Telefon</p>
+        <p class="value">
+          <a href="tel:+420730553590">+420 730 553 590</a>
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <p class="label">E-mail</p>
+        <p class="value">
+          <a href="mailto:info@beautifybyklara.cz">info@beautifybyklara.cz</a>
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <p class="label">Otvírací doba</p>
+        <p class="value" style="display: block;">Dle objednávek</p>
+        <p style="font-size: 13px; color: var(--ink-dim); margin-top: 8px; font-style: italic; line-height: 1.6;">
+          Objednávky možné pondělí–pátek od 9:00 do 20:00
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <p class="label">Sledujte mě</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/beautifybyklara/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/p/Beautify-By-Klára-61555807177376/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5H16V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V11H7v3.1h2.6V22H13z"/>
+            </svg>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Beautify+By+Kl%C3%A1ra&query_place_id=ChIJjcMKZoiMSUoR2M8JRy1WW5c" target="_blank" rel="noopener" aria-label="Google">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Mickiewiczova+548%2F1a+Hav%C3%AD%C5%99ov&destination_place_id=ChIJjcMKZoiMSUoR2M8JRy1WW5c" target="_blank" rel="noopener" class="contact-map" aria-label="Otevřít navigaci v Google Maps">
+        <div class="map-canvas">
+          <svg class="map-grid" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,184,219,0.08)" stroke-width="1"/>
+              </pattern>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(255,95,176,0.25)"/>
+                <stop offset="100%" stop-color="rgba(255,95,176,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="500" fill="url(#grid)"/>
+            <!-- Stylized roads -->
+            <path d="M 0 180 Q 150 200 250 220 T 400 280" stroke="rgba(255,184,219,0.15)" stroke-width="20" fill="none"/>
+            <path d="M 180 0 Q 200 150 220 250 T 280 500" stroke="rgba(255,184,219,0.12)" stroke-width="14" fill="none"/>
+            <path d="M 0 380 L 400 360" stroke="rgba(255,184,219,0.1)" stroke-width="10" fill="none"/>
+            <!-- Glow under pin -->
+            <circle cx="200" cy="250" r="120" fill="url(#glow)"/>
+            <!-- Pin -->
+            <g transform="translate(200,250)">
+              <circle r="40" fill="rgba(255,95,176,0.15)" class="map-pulse"/>
+              <circle r="28" fill="rgba(255,95,176,0.3)" class="map-pulse" style="animation-delay:0.6s"/>
+              <path d="M 0,-20 C -11,-20 -20,-11 -20,0 C -20,12 0,30 0,30 C 0,30 20,12 20,0 C 20,-11 11,-20 0,-20 Z" fill="#ff5fb0" stroke="#fff" stroke-width="1.5"/>
+              <circle cy="-2" r="6" fill="#fff"/>
+            </g>
+          </svg>
+          <div class="map-overlay">
+            <div class="map-label">
+              <span class="map-label-name">Beautify By Klára</span>
+              <span class="map-label-addr">Mickiewiczova 548/1a, Havířov</span>
+              <span class="map-label-cta">Otevřít navigaci →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      <div class="parking-note">
+        <h4>Parkování</h4>
+        <p>
+          U Elánu (2 hodiny zdarma), u hřiště Sportovní haly Slavie. <br />
+          MHD: zastávky Havířov-Střed a Havířov-Obchodní dům.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="images/logo.png" alt="Beautify by Klára" />
+  </div>
+  <p class="footer-tagline">Kosmetický salon · Havířov</p>
+  <div class="footer-bottom">
+    <span>© 2026 Beautify By Klára. Všechna práva vyhrazena.</span>
+    <span>Mickiewiczova 548/1a, Havířov · +420 730 553 590</span>
+  </div>
+</footer>
+
+<!-- Modal pro rezervaci na desktopu -->
+<div class="modal-overlay" id="reservationModal" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Zavřít">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M6 6l12 12M6 18L18 6"/>
+      </svg>
+    </button>
+    <p class="modal-eyebrow">Rezervace termínu</p>
+    <h3 class="modal-title">Volejte nebo pište</h3>
+    <p class="modal-text">Pro rezervaci termínu mě prosím kontaktujte na:</p>
+    <a href="tel:+420730553590" class="modal-phone">+420 730 553 590</a>
+    <p class="modal-hours">pondělí až pátek, 9:00 až 20:00</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-small" id="copyPhone">Zkopírovat číslo</button>
+      <a href="sms:+420730553590" class="btn btn-primary btn-small">Poslat SMS</a>
+    </div>
+    <p class="modal-copied" id="copiedMsg">Číslo zkopírováno 🤍</p>
+  </div>
+</div>
+
+<script>
+// Při refresh nebo přímém otevření zachovat scroll nahoře
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+// Při načtení skrolovat nahoru (kromě případů kdy jsme přišli přes # odkaz)
+window.addEventListener('load', () => {
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+});
+
+const menuToggle = document.getElementById('menuToggle');
+const navClose = document.getElementById('navClose');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navClose.addEventListener('click', () => navLinks.classList.remove('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// Modal rezervace - na desktopu zobrazit místo tel: linku
+const reservationModal = document.getElementById('reservationModal');
+const modalClose = document.getElementById('modalClose');
+const copyPhoneBtn = document.getElementById('copyPhone');
+const copiedMsg = document.getElementById('copiedMsg');
+
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.matchMedia('(max-width: 768px)').matches;
+}
+
+function openReservationModal() {
+  reservationModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeReservationModal() {
+  reservationModal.classList.remove('open');
+  document.body.style.overflow = '';
+  copiedMsg.classList.remove('show');
+}
+
+// Najít všechny tel: linky a na desktopu otevřít modal
+document.querySelectorAll('a[href="tel:+420730553590"]').forEach(link => {
+  // Vynechat linky v kontaktní sekci a footeru (tam má smysl tel: i na desktopu)
+  if (link.closest('.contact-card') || link.closest('.footer')) return;
+  link.addEventListener('click', (e) => {
+    if (!isMobile()) {
+      e.preventDefault();
+      openReservationModal();
+    }
+  });
+});
+
+modalClose.addEventListener('click', closeReservationModal);
+reservationModal.addEventListener('click', (e) => {
+  if (e.target === reservationModal) closeReservationModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && reservationModal.classList.contains('open')) closeReservationModal();
+});
+
+copyPhoneBtn.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText('+420 730 553 590');
+    copiedMsg.classList.add('show');
+    setTimeout(() => copiedMsg.classList.remove('show'), 2500);
+  } catch (err) {
+    // Fallback
+    const tmp = document.createElement('textarea');
+    tmp.value = '+420 730 553 590';
+    document.body.appendChild(tmp);
+    tmp.select();
+    document.execCommand('copy');
+    document.body.removeChild(tmp);
+    copiedMsg.classList.add('show');
+    setTimeout(() => copiedMsg.classList.remove('show'), 2500);
+  }
+});
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
